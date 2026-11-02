@@ -13,12 +13,38 @@
 
 # practic 2
 
-def make_greeter(greeting):
-    def blessing(name):
-        return f"{greeting} , {name}"
-    return blessing
+# def make_greeter(greeting):
+#     def blessing(name):
+#         return f"{greeting}, {name}"
+#     return blessing
 
-hello = make_greeter("Hello")
-shalom = make_greeter("Shalom")
-print(hello("Dana"))
-print(shalom("Avi"))
+# hello = make_greeter("Hello")
+# shalom = make_greeter("Shalom")
+# print(hello("Dana"))
+# print(shalom("Avi"))
+
+# practic 3
+#  SyntaxError אין משתנה גלובלי בשם message
+
+
+# practic 4
+
+def make_counter(step):
+    count = 0
+    def by_two():
+        nonlocal count
+        count += step
+        return count
+
+    def by_ten():
+        nonlocal count
+        count += step
+        return count
+    return by_two if step == 2 else by_ten
+
+by_two = make_counter(2)
+by_ten = make_counter(10)
+
+print(by_two(), by_two())
+print(by_ten())
+print(by_two())
