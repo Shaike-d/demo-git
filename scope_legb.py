@@ -23,9 +23,28 @@
 # וכעת בcount המקומי לא שייך בזמן היצירה שלו לומר שהוא שווה את עצמו ועוד משהו.
 
 # תיקון הפונקציה:
-count = 0
-def add_one(count):
-    return count + 1
+# count = 0
+# def add_one(count):
+#     return count + 1
+# print(add_one(count))
 
-print(add_one(count))
+
+# practic 4 
+# המשתמש לקח אובייקט שמור בפיתון והשים אותו כמשתנה ולכן בשורה השניה כשהוא החליט להפעיל את האובייקט פיתון מעלה שגיאה שהיא אפשרל קרוא (list) כאובייקט
+
+# practic 5
+
+def add(cart, total, price):
+    new_cart =cart + [price]
+    new_total = total + price
+    return new_cart, new_total
+
+cart = []
+total = 0
+
+cart, total = add(cart, total, 100)
+cart, total = add(cart, total, 50)
+
+print(cart, total)
+
 
